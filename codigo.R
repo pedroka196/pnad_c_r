@@ -26,7 +26,7 @@ help("get_pnadc")
 
 variaveis_selecionadas <- c("UF", "V2007", "V2009", "V2010", "V3007", "VD3001", "VD4001", "VD4002", "VD4020", "VD4035")
 # Baixa os dados 
-dadosPNADc_anual <- get_pnadc(year = 2017, labels = T, interview = 1, vars = variaveis_selecionadas,design = F)
+dadosPNADc_anual <- get_pnadc(year = 2018, labels = T, interview = 1, vars = variaveis_selecionadas,design = F)
 dadosPNADc_anual <- pnadc_labeller(dadosPNADc_anual, dictionary.file = "dados/dicionario_PNAD_CONTINUA_MICRODADOS_1_visita_2017_20181108.xls")
 dadosPNADc_anual <- pnadc_design(dadosPNADc_anual)
 # Para dados offline
@@ -216,6 +216,9 @@ renda.media.cor.plot <- ggplot(data=renda.media.cor, group_by = V2010, color = V
   xlab("")+ylab("Renda média efetiva")+
   theme(legend.title = element_blank())+
   ggthemes::theme_hc()
+
+renda.media.cor.plot
+
 
 renda.media.cor.plot
 giniCor.plot
